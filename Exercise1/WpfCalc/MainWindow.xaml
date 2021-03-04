@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="230" Width="300" MinWidth="300" MinHeight="230" MaxWidth="300" MaxHeight="230">
+    <Grid x:Name="MainGrid">
+        <Label x:Name="HintNum1" Content="第一个数:" HorizontalAlignment="Left" Height="25" Margin="20,20,0,0"
+               VerticalAlignment="Top" Width="65" />
+        <Label x:Name="HintNum2" Content="第二个数:" HorizontalAlignment="Left" Height="25" Margin="20,60,0,0"
+               VerticalAlignment="Top" Width="65" />
+        <TextBox x:Name="Number1" Text="{Binding Path=Num1,UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" Height="20" Margin="90,25,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="180" />
+        <TextBox x:Name="Number2" Text="{Binding Path=Num2,UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" Height="20" Margin="90,62,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="180" />
+        <Label x:Name="HintOperator" Content="运算符:" HorizontalAlignment="Left" Height="25" Margin="20,100,0,0"
+               VerticalAlignment="Top" Width="65" />
+        <ComboBox x:Name="Operator" SelectedItem="{Binding Path=Op}" HorizontalAlignment="Left" Height="20"
+                  Margin="90,102,0,0" VerticalAlignment="Top"
+                  Width="45">
+            <ComboBoxItem Content="+" />
+            <ComboBoxItem Content="-" />
+            <ComboBoxItem Content="*" />
+            <ComboBoxItem Content="/" />
+        </ComboBox>
+        <Label x:Name="HintResult" Content="运算结果:" HorizontalAlignment="Left" Height="25" Margin="20,140,0,0"
+               VerticalAlignment="Top" Width="65" />
+        <Label x:Name="Output" Content="{Binding Path=Result}" HorizontalAlignment="Left" Height="25"
+               Margin="90,140,0,0"
+               VerticalAlignment="Top" Width="180" />
+
+    </Grid>
+</Window>

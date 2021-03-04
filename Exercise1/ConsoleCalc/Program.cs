@@ -6,11 +6,25 @@ namespace ConsoleCalc
     {
         private static void Main(string[] args)
         {
+            double num1, num2;
+
             Console.WriteLine("Simple Calculator");
+
             Console.Write("Please input the first number: ");
-            var num1 = Convert.ToDouble(Console.ReadLine());
+            if (!double.TryParse(Console.ReadLine(), out num1))
+            {
+                Console.WriteLine("Please input a number!");
+                return;
+            }
+
+
             Console.Write("Please input the second number: ");
-            var num2 = Convert.ToDouble(Console.ReadLine());
+            if (!double.TryParse(Console.ReadLine(), out num2))
+            {
+                Console.WriteLine("Please input a number!");
+                return;
+            }
+
             Console.Write("Please input the operator: ");
             var op = Console.ReadLine();
 
@@ -26,6 +40,12 @@ namespace ConsoleCalc
                     Console.WriteLine($"Result: {num1 * num2}");
                     break;
                 case "/":
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("Divided by zero!");
+                        return;
+                    }
+
                     Console.WriteLine($"Result: {num1 / num2}");
                     break;
 
