@@ -43,7 +43,7 @@ namespace Tree
             _th1 = (double) Th1.Value * Math.PI / 180;
             _th2 = (double) Th2.Value * Math.PI / 180;
 
-            _graphics ??= panel1.CreateGraphics();
+            _graphics = panel1.CreateGraphics();
             _graphics.Clear(Color.White);
             DrawCayleyTree((int) Depth.Value,
                 (panel1.Right - panel1.Left) * 0.5, (panel1.Bottom - panel1.Top) * 0.9,
