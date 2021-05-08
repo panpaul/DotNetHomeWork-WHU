@@ -1,0 +1,31 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="clr-namespace:Spider"
+    x:Class="Spider.MainWindow"
+    mc:Ignorable="d"
+    Title="MainWindow" Height="450" Width="800" MinWidth="450" MinHeight="200" Closed="Window_Closed">
+
+    <Grid>
+        <TextBox x:Name="TbEntryUrl" HorizontalAlignment="Left" Margin="20,14,0,0" Text="http://www.cnblogs.com/dstang2000/"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="17.24" />
+        <Button x:Name="BtnStart" Content="开始" HorizontalAlignment="Left" Margin="260,13,0,0" VerticalAlignment="Top"
+                Width="43" Click="btnStart_Click" />
+        <ListView x:Name="ResultListView" Margin="20,45,20,20">
+            <ListView.DataContext>
+                <ui:Data />
+            </ListView.DataContext>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="URL" Width="125" DisplayMemberBinding="{Binding Path=Url}" />
+                    <GridViewColumn Header="PATH" Width="125" DisplayMemberBinding="{Binding Path=FileName}" />
+                    <GridViewColumn Header="ERROR" Width="125" DisplayMemberBinding="{Binding Path=Error}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+
+</Window>
